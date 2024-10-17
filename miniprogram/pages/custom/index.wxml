@@ -1,0 +1,98 @@
+<view class="custom">
+  <!-- 背景元素 -->
+  <view class="background">
+    <view class="vec-rectangle-HIv-1"></view>
+    <view class="vec-rectangle-WsH-2"></view>
+    <view class="vec-rectangle-ztj-3"></view>
+  </view>
+  <!-- 页面标题 -->
+  <view class="title">轻松定制自已专属尺寸</view>
+  
+  <!-- 输入表单容器 -->
+  <view class="container">
+    
+    <!-- 名称输入框 -->
+    <view class="form-item">
+      <text class="form-label">名称：</text>
+      <input 
+        type="text" 
+        placeholder="请输入名称" 
+        maxlength="10" 
+        bindinput="changeName" 
+        class="form-input"
+        value="{{name}}"
+      />
+    </view>
+    
+    <!-- 宽度输入框 -->
+    <view class="form-item">
+      <text class="form-label">宽度：</text>
+      <input 
+        type="number" 
+        placeholder="像素：px" 
+        maxlength="4" 
+        bindinput="changeWidth" 
+        class="form-input"
+        value="{{width}}"
+      />
+    </view>
+    
+    <!-- 高度输入框 -->
+    <view class="form-item">
+      <text class="form-label">高度：</text>
+      <input 
+        type="number" 
+        placeholder="像素：px" 
+        maxlength="4" 
+        bindinput="changeHeight" 
+        class="form-input"
+        value="{{height}}"
+      />
+    </view>
+    
+    <!-- 分辨率输入框 -->
+    <view class="form-item">
+      <text class="form-label">分辨率：</text>
+      <input 
+        type="number" 
+        placeholder="分辨率：dpi" 
+        maxlength="4" 
+        class="form-input dpi-input"
+        value="{{dpi}}"
+      />
+    </view>
+
+    
+    <!-- 尺寸显示框（只读） -->
+    <view class="form-item">
+      <text class="form-label">尺寸:</text>
+      <input 
+        type="text" 
+        placeholder="尺寸：mm" 
+        class="form-input readonly-input"
+        value="{{size}}"
+        disabled
+      />
+    </view>
+
+    
+    
+    <!-- 像素显示框（只读） -->
+    <view class="form-item">
+      <text class="form-label">像素:</text>
+      <input 
+        type="text" 
+        placeholder="像素：px" 
+        class="form-input readonly-input"
+        value="{{px}}"
+        disabled
+      />
+    </view>
+  </view>
+  
+  <!-- 底部保存按钮 -->
+  <view class="bottom">
+    <button bindtap="addSize" class="save-button">保存尺寸</button>
+  </view>
+
+</view>

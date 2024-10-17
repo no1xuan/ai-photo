@@ -1,0 +1,57 @@
+<view class="container">
+  <!-- 背景元素 -->
+  <view class="background">
+    <view class="vec-rectangle-HIv-1"></view>
+    <view class="vec-rectangle-WsH-2"></view>
+    <view class="vec-rectangle-ztj-3"></view>
+  </view>
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">我的定制列表</text>
+  </view>
+  
+  <!-- 定制列表 -->
+  <scroll-view class="list" scroll-y="true" bindscrolltolower="onReachBottom" scroll-with-animation>
+    <!-- 列表为空时显示提示信息 -->
+    <view wx:if="{{customList.length === 0 && !isLoading}}" class="empty-state">
+      <text class="empty-text">您还没有定制过任何尺寸哦~</text>
+    </view>
+    
+    <!-- 定制列表项 -->
+    <block wx:for="{{customList}}" wx:key="id">
+      <view class="card">
+        <view class="card-header">
+          <text class="card-title">{{item.name}}</text>
+          <text class="card-date">{{item.createTime}}</text>
+        </view>
+        <view class="card-body">
+          <view class="detail-row">
+            <text class="detail-label">宽高：</text>
+            <text class="detail-value">{{item.widthPx}} px * {{item.heightPx}} px</text>
+          </view>
+          <view class="detail-row">
+            <text class="detail-label">尺寸：</text>
+            <text class="detail-value">{{item.widthMm}} px * {{item.heightMm}} mm</text>
+          </view>
+          <view class="detail-row">
+            <text class="detail-label">分辨率：</text>
+            <text class="detail-value">{{item.dpi}} dpi</text>
+          </view>
+        </view>
+        <button class="make-button" bindtap="goMake" data-item="{{item}}">
+          <text>去制作</text>
+        </button>
+      </view>
+    </block>
+    
+    <!-- 加载中提示 -->
+    <view wx:if="{{isLoading}}" class="loading">
+      <text>加载中...</text>
+    </view>
+    
+    <!-- 没有更多数据提示 -->
+    <view wx:if="{{!hasMoreData && customList.length > 0}}" class="no-more">
+      <text>-----------------------人家也是有底线滴----------------------</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,85 @@
+<view class="photoPage-container"> 
+
+  <!-- 背景层 -->
+  <view class="photoPage-background">
+    <view class="photoPage-vec-rectangle-HIv-1"></view>
+    <view class="photoPage-vec-rectangle-WsH-2"></view>
+    <view class="photoPage-vec-rectangle-ztj-3"></view>
+  </view>
+  
+  <!-- 标题部分 -->
+  <view class="photoPage-title">
+    <image src="../../assets/image/usual.png" mode="widthFix"></image>
+  </view>
+  
+  <!-- 规格信息 -->
+  <view class="photoPage-weui-cells photoPage-weui-cells_after-title">
+    
+    <view class="weui-cell">
+      <view class="weui-cell__bd">规格名称</view>
+      <view class="weui-cell__ft">{{detail.name}}</view>
+    </view>
+    
+    <view class="weui-cell">
+      <view class="weui-cell__bd">冲印尺寸</view>
+      <view class="weui-cell__ft">{{detail.widthMm}} * {{detail.heightMm}} mm</view>
+    </view>
+    
+    <view class="weui-cell">
+      <view class="weui-cell__bd">像素尺寸</view>
+      <view class="weui-cell__ft">{{detail.widthPx}} * {{detail.heightPx}} px</view>
+    </view>
+    
+    <view class="weui-cell">
+      <view class="weui-cell__bd">分辨率</view>
+      <view class="weui-cell__ft">300dpi</view>
+    </view>
+    
+    <view class="weui-cell">
+      <view class="weui-cell__bd">文件大小</view>
+      <view class="weui-cell__ft">不限制</view>
+    </view>
+    
+    <view class="weui-cell">
+      <view class="weui-cell__bd">颜色</view>
+        <view class="weui-cell__ft photoPage-color-picker">
+          <view class="photoPage-color-circle white"></view>
+           <view class="photoPage-color-circle blue"></view>
+           <view class="photoPage-color-circle light-blue"></view>
+           <view class="photoPage-color-circle red"></view>
+           <view class="photoPage-color-circle rainbow"></view>
+        </view>
+    </view>
+    
+      <view class="weui-cell">
+        <view class="weui-cell__bd">其他</view>
+        <view class="weui-cell__ft">头部居中，露出双耳和眉毛，面部无遮挡</view>
+      </view>
+    
+  </view>
+
+  <!-- 按钮 -->
+<view class="photoPage-btn-group">
+  <button 
+    bindtap="chooseImage"
+    class="photoPage-btn choose-image" 
+    style="border: 1px solid #3e7dff; color: #3e7dff" 
+    type="primary" 
+    plain="{{true}}" 
+    hover-class="none" 
+    data-key="1">
+    相册选择
+  </button>
+  <button 
+    bindtap="chooseCamera"
+    class="photoPage-btn take-photo" 
+    style="background-color: #3e7dff" 
+    type="primary" 
+    hover-class="none" 
+    data-key="2">
+    相机拍摄
+  </button>
+</view>
+
+  
+</view>

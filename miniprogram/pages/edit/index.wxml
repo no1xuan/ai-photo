@@ -1,0 +1,121 @@
+<view class="container">
+  <!-- 背景装饰 -->
+  <view class="background">
+    <view class="vec-rectangle-HIv-1"></view>
+    <view class="vec-rectangle-WsH-2"></view>
+    <view class="vec-rectangle-ztj-3"></view>
+  </view>
+
+  <!-- 照片展示区域 -->
+  <view class="photo-display">
+    <view class="photo-frame">
+      <view class="frame-decoration"></view>
+      <view class="photo-card glass-effect">
+        <image class="user-photo" src="{{imageData.cimg}}" mode="widthFix"></image>
+      </view>
+    </view>
+    <text class="preview-text">小提示：保存高清照会比较清晰哦~</text>
+  </view>
+
+  <!-- 选择背景色 -->
+  <view class="select-background glass-effect">
+    <text class="select-text">选择背景色</text>
+    <view class="color-options">
+      <view
+        class="color-option"
+        style="background-color: #ffffff"
+        bindtap="changeBackgroundColor"
+        data-color="#ffffff"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #428eda"
+        bindtap="changeBackgroundColor"
+        data-color="#428eda"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #D9001B"
+        bindtap="changeBackgroundColor"
+        data-color="#D9001B"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #539fed"
+        bindtap="changeBackgroundColor"
+        data-color="#539fed"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #b3b3b3"
+        bindtap="changeBackgroundColor"
+        data-color="#b3b3b3"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #ac020b"
+        bindtap="changeBackgroundColor"
+        data-color="#ac020b"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #2c4c80"
+        bindtap="changeBackgroundColor"
+        data-color="#2c4c80"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #ffdad8"
+        bindtap="changeBackgroundColor"
+        data-color="#ffdad8"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #fef7c6"
+        bindtap="changeBackgroundColor"
+        data-color="#fef7c6"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #d1f0dc"
+        bindtap="changeBackgroundColor"
+        data-color="#d1f0dc"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #e4d7f3"
+        bindtap="changeBackgroundColor"
+        data-color="#e4d7f3"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #c0e8e7"
+        bindtap="changeBackgroundColor"
+        data-color="#e4d7f3"
+      ></view>
+      <view
+        class="color-option"
+        style="background-color: #d0ddf5"
+        bindtap="changeBackgroundColor"
+        data-color="#e4d7f3"
+      ></view>
+
+
+
+      <!-- 自定义颜色选项
+      <view
+        class="color-option custom-option"
+        style="background-color: #e0e0e0"
+        bindtap="changeBackgroundColor"
+        data-color="custom"
+      >
+        <text class="custom-color-text">自定义</text>
+      </view> -->
+    </view>
+  </view>
+
+  <view class="action-buttons">
+    <button class="save-button" bindtap="openSavePhoto" data-type="1">保存预览照</button>
+    <button class="download-button" bindtap="openSavePhoto" data-type="2">保存AI高清照</button>
+  </view>
+</view>

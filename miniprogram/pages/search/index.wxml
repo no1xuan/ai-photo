@@ -1,0 +1,56 @@
+<view class="header">
+
+</view>
+<view class="container">
+  <view class="background">
+  <view class="vec-rectangle-HIv-1"></view>
+  <view class="vec-rectangle-WsH-2"></view>
+  <view class="vec-rectangle-ztj-3"></view>
+</view>
+  <!-- 搜索栏 -->
+  <view class="search-box">
+    <view class="search">
+      <i class="iconfont icon-sousuo" bindtap="handleSearch"></i>
+      <input 
+        type="text" 
+        placeholder="请输入关键词,如：一寸" 
+        bindinput="onInput" 
+        bindconfirm="handleSearch" 
+        value="{{value}}"
+      />
+      <block wx:if="{{value}}">
+        <i class="iconfont icon-quxiao" bindtap="clearSearch"></i>
+      </block>
+    </view>
+  </view>
+
+  <!-- 搜索结果列表 -->
+  <view class="sort-list">
+    <view wx:for="{{photoSizeList}}" wx:key="id" class="sort-card" bindtap="goNextPage" data-index="{{index}}">
+      <view class="info">
+        <text>{{item.name}}</text>
+        <view class="size">
+          <view class="size-item">
+            <span class="tag">像素</span>
+            <span>{{item.widthPx}}×{{item.heightPx}}px</span>
+          </view>
+          <view class="size-item">
+            <span class="tag">尺寸</span>
+            <span>{{item.widthMm}}×{{item.heightMm}}mm</span>
+          </view>
+        </view>
+      </view>
+      <i class="iconfont icon-xiangji1"></i>
+    </view>
+
+    <!-- 无结果提示 -->
+    <view wx:if="{{noResults}}" class="no-results">
+      <text>没有找到相关规格</text>
+    </view>
+  </view>
+
+  <!-- 加载更多提示 -->
+  <view wx:if="{{isLoading}}" class="loading-more">
+    <text>加载中...</text>
+  </view>
+</view>

@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 45px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.list {
+  width: 100%;
+  max-width: 600px;
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.empty-state, .loading, .no-more {
+  text-align: center;
+  color: #888;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.empty-text {
+  font-size: 16px;
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-title, .card-date {
+  font-size: 18px;
+  color: #333;
+}
+
+.card-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #555;
+  width: 80px;
+  white-space: nowrap;
+}
+
+.detail-value {
+  color: #555;
+  flex: 1;
+}
+
+.make-button {
+  position: absolute;
+  bottom: 10px;
+  right: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px !important; 
+  height: 35px;
+  background-color: #1AAD19;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}

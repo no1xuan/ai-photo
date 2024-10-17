@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/index",
+    "pages/photo/index",
+    "pages/preedit/index",
+    "pages/login/index",
+    "pages/edit/index",
+    "pages/search/index",
+    "pages/custom/index",
+    "pages/customlist/index",
+    "pages/camera/index"
+  ],
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./assets/icon/shouye.png",
+        "selectedIconPath": "./assets/icon/shouye_1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/photo/index",
+        "iconPath": "./assets/icon/shoucang.png",
+        "selectedIconPath": "./assets/icon/shoucang_1.png",
+        "text": "相册"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "./assets/icon/shequ.png",
+        "selectedIconPath": "./assets/icon/shequ_1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

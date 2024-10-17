@@ -1,0 +1,130 @@
+/* 页面布局样式 */
+page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 未登录提示的样式，确保居中 */
+.unlogged-content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.unlogged-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.login-button {
+  background-color: transparent;
+  color: #1a75ff;
+  border: 2px solid #1a75ff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* 已登录状态下的照片展示部分 */
+.photos {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: calc(50% - 0.5rem) calc(50% - 0.5rem);
+  margin-top: 6.4rem;
+}
+
+.photos .photo-card {
+  border-radius: .5rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: .5rem;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.photos .photo-card .photo {
+  border-radius: .5rem;
+  width: auto;
+  height: 12rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.photos .photo-card .title {
+  padding-top: .3rem;
+  width: auto;
+}
+
+.photos .photo-card .main-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photos .photo-card .main-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.photos .photo-card .size {
+  font-size: 12px;
+  color: #888;
+  margin-left: 10px;
+}
+
+.photos .photo-card .create-time {
+  font-size: 12px;
+  color: #888;
+  margin-top: 0.2rem;
+  text-align: right;
+  display: block;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+}
+
+.download-button-outline {
+  flex: 1;
+  background-color: transparent;
+  color: #1AAD19;
+  border: 1px solid #1AAD19;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  font-size: 12px;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+.delete-button-outline{
+  flex: 1;
+  background-color: transparent;
+  color: red;
+  border: 1px solid red;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  font-size: 12px;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}

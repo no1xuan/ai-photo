@@ -1,0 +1,34 @@
+<view class="background">
+  <view class="vec-rectangle-HIv-1"></view>
+  <view class="vec-rectangle-WsH-2"></view>
+  <view class="vec-rectangle-ztj-3"></view>
+</view>
+
+<view class="container">
+  <!-- 未登录提示 -->
+  <view class="unlogged-content" wx:if="{{!authorized}}">
+    <view class="unlogged-view">
+      <image src="../../assets/image/login.png" class="login-icon"></image>
+      <text>您还没有登录哦~</text>
+      <button class="login-button" bindtap="goLogin">去登录</button>
+    </view>
+  </view>
+
+  <!-- 已登录显示内容 -->
+  <view class="photos" wx:if="{{authorized}}">
+    <view wx:for="{{ workList }}" wx:key="id" class="photo-card">
+      <image src="{{item.nimg}}" class="photo" mode=""/>
+      <view class="title">
+        <view class="main-row">
+          <text class="main-title">{{item.name}}</text>
+          <span class="size">{{item.size}}</span>
+        </view>
+        <text class="create-time">{{item.createTime}}</text>
+      </view>
+      <view class="button-group">
+        <button class="download-button-outline" bindtap="handleDownload" data-url="{{item.nimg}}">下载</button>
+        <button class="delete-button-outline" bindtap="handleDelete" data-id="{{item.id}}">删除</button>
+      </view>
+    </view>
+  </view>
+</view>

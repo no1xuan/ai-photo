@@ -1,0 +1,81 @@
+<view class="header">
+  <text class="title">首页</text>
+</view>
+<view class="background">
+  <view class="vec-rectangle-HIv-1"></view>
+  <view class="vec-rectangle-WsH-2"></view>
+  <view class="vec-rectangle-ztj-3"></view>
+</view>
+
+<view class="container">
+  <view class="title-box">
+    <text class="title">AI快速制作您的证件照</text>
+    <view class="sub-title">
+      <text>一秒出图</text>
+      <text>无需等待</text>
+      <text>尺寸齐全</text>
+    </view> 
+  </view>
+
+  <view class="search-box" bindtap="navigateToSearch">
+    <view class="search">
+      <i class="iconfont icon-sousuo"></i>
+      <input type="text" placeholder="查找您想找证件照名称、尺寸"/>
+    </view>
+  </view>
+
+  <view class="tools-box">
+    <view class="tool" bindtap="examineTo">
+      <image src="../../assets/image/zjz.svg" class="photo" mode=""/>
+      <view class="tool-title">
+        <view class="title">
+          <text>一寸照</text>
+          <i class="iconfont icon-xiangji1"></i>
+        </view>
+        <view class="sub-title">
+          <span>25×35mm</span>
+          <span>295×413px</span>
+        </view>
+      </view>
+    </view>
+
+    <view class="sub-tool">
+      <view class="tool" bindtap="goCustom">
+        <view class="title">
+          <text>自定义</text>
+          <span>自定义照片尺寸</span>
+        </view>
+        <image src="../../assets/image/zdy.svg" class="icon" mode=""/>
+      </view>
+
+      <view class="tool" bindtap="goCustomlist">
+        <view class="title">
+          <text>我的定制</text>
+          <span>专属定制列表</span>
+        </view>
+        <image src="../../assets/image/koutu.svg" class="icon" mode=""/>
+      </view>
+    </view>
+  </view>
+
+  <view class="sort-box">
+    <view class="sort-list">
+      <view wx:for="{{specArr}}" wx:key="id" class="sort-card" bindtap="handleSortCardTap" data-index="{{index}}">
+        <view class="info">
+          <text>{{item.name}}</text>
+          <view class="size">
+            <view class="size-item">
+              <span class="tag">像素</span>
+              <span>{{item.widthPx}}×{{item.heightPx}}px</span>
+            </view>
+            <view class="size-item">
+              <span class="tag">尺寸</span>
+              <span>{{item.widthMm}}×{{item.heightMm}}mm</span>
+            </view>
+          </view>
+        </view>
+        <i class="iconfont icon-xiangji1"></i>
+      </view>
+    </view>
+  </view>
+</view>

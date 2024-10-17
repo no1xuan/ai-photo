@@ -1,0 +1,167 @@
+/* 全局样式 */
+page {
+  background-color: #fafafe;
+  font-family: "PingFangSC-Regular", sans-serif;
+  margin-top: 3rem;
+}
+
+/* 背景装饰 */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* 玻璃拟态效果 */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4rpx 30rpx rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10rpx);
+}
+
+/* 照片展示区域 */
+.photo-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100rpx;
+}
+
+.photo-frame {
+  position: relative;
+  width: 90%;
+  max-width: 600rpx;
+}
+
+.frame-decoration {
+  position: absolute;
+  top: -10rpx;
+  left: -10rpx;
+  right: -10rpx;
+  bottom: -10rpx;
+  border: 20rpx solid #d4d4d4;
+  border-radius: 24rpx;
+  box-sizing: border-box;
+  z-index: -1;
+}
+
+.photo-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-photo {
+  width: 100%;
+  border-radius: 16rpx;
+}
+
+/* 预览文字样式 */
+.preview-text {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #888888;
+  text-align: center;
+}
+
+/* 选择背景色 */
+.select-background {
+  position: fixed;
+  bottom: 200rpx;
+  left: 20rpx;
+  right: 20rpx;
+  padding: 15rpx 10rpx;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+}
+
+.select-text {
+  font-size: 24rpx;
+  color: #888888;
+  text-align: center;
+  margin-bottom: 5rpx;
+  margin-top: -10rpx;
+}
+
+.color-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: flex-start;
+  padding: 0 10rpx;
+  gap: 10rpx;
+}
+
+.color-option {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx rgba(0, 0, 0, 0.3); 
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.custom-option {
+  width: auto;
+  padding: 0 20rpx;
+  border-radius: 30rpx;
+}
+
+.color-selected-icon {
+  position: absolute;
+  top: 16rpx;
+  left: 16rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.custom-color-text {
+  font-size: 24rpx;
+  color: #333333;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  position: fixed;
+  bottom: 80rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30rpx;
+}
+
+.save-button,
+.download-button {
+  width: 45%;
+  height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button {
+  color: #3e7dff;
+  border: 1rpx solid #3e7dff;
+  background-color: #ffffff;
+}
+
+.download-button {
+  color: #ffffff;
+  background-color: #3e7dff;
+}

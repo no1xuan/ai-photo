@@ -1,0 +1,152 @@
+.container {
+  padding: 20px 22px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110rpx;
+}
+
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.vec-rectangle-HIv-1, .vec-rectangle-WsH-2, .vec-rectangle-ztj-3 {
+
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  width: 90%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  position: relative;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.search .iconfont {
+  font-size: 20px;
+  color: #383838;
+  cursor: pointer;
+}
+
+.search .icon-quxiao {
+  font-size: 20px;
+  color: #383838;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.sort-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.sort-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+}
+
+.sort-card::after {
+  content: "";
+  position: absolute;
+  top: -0.5px;
+  left: -0.5px;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  pointer-events: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.size {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.size-item {
+  display: flex;
+  align-items: center;
+}
+
+.size-item .tag {
+  background-color: #383838;
+  color: #eeeeee;
+  border-radius: 90px;
+  padding: 2px 5px;
+  font-size: 10px;
+  margin-right: 4px;
+}
+
+.size-item span {
+  font-size: 12px;
+  color: #383838;
+}
+
+.iconfont.icon-xiangji1 {
+  font-size: 20px;
+  color: #383838;
+}
+
+.no-results {
+  text-align: center;
+  color: #888888;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.loading-more {
+  text-align: center;
+  padding: 10px 0;
+  color: #888888;
+}

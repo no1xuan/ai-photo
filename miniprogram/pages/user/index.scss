@@ -1,0 +1,303 @@
+.info {
+  width: 100%;
+  display: flex;
+  padding: 1rem 0;
+  gap: 1rem;
+  margin-top: 5.8rem;
+}
+
+.info .image {
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+  position: relative;
+  z-index: 1;
+  border-radius: 90px;
+  mix-blend-mode: normal;
+  display: flex;
+  opacity: 1;
+  box-sizing: border-box;
+  order: 0;
+  flex-shrink: 0;
+}
+
+.info .image::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: -0.5px;
+  top: -0.5px;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  box-sizing: border-box;
+  z-index: 999;
+  pointer-events: none;
+  border-radius: 90px;
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.info .image .photo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 90rpx;
+  object-position: center center;
+}
+
+.info .userInfo {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  height: auto;
+  mix-blend-mode: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  order: 1;
+  min-width: auto;
+}
+
+.info .userInfo>text {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.info .userInfo .data-view {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info .userInfo .data-view view {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+}
+
+.info .userInfo .data-view text {
+  color: #383838;
+  font-size: 14px;
+}
+
+.info .userInfo .data-view span {
+  font-weight: 700;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: .5rem;
+  backdrop-filter: blur(10px);
+  mix-blend-mode: normal;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+.card::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: -0.5px;
+  top: -0.5px;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  box-sizing: border-box;
+  z-index: 999;
+  pointer-events: none;
+  border-radius: .5rem;
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.card {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #F6F6F6;
+}
+
+.card .card-content {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.tools {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto auto auto auto;
+}
+
+.tools .tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.tools .tool .iconfont {
+  font-size: 24px;
+}
+
+.tools .tool text {
+  font-size: 14px;
+}
+
+/* 模态框样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 80%;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-list text {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* 模态框内按钮样式 */
+.modal-body button {
+  width: 100%;
+  background-color: #4a99fa;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* 编辑个人资料表单样式 */
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #eee;
+}
+
+.avatar-wrapper .avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-wrapper .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-text {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.nickname-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.nickname-input::placeholder {
+  color: #999;
+}
+
+.save-button {
+  width: 100%;
+  background-color: #07c160;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* 彩蛋弹窗 */
+.easter-egg-content {
+  background-color: #ffe6f0;
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.easter-egg-content::before {
+  content: "💕";
+  font-size: 30px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.easter-egg-content .modal-title {
+  font-size: 20px;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.easter-egg-content .modal-message {
+  font-size: 16px;
+  color: #d6336c;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.easter-egg-content .modal-body button {
+  background-color: #ff69b4;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}

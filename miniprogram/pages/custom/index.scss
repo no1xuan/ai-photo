@@ -1,0 +1,148 @@
+.custom {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: "PingFangSC-Regular, sans-serif";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 22px;
+  margin-top: 10rem;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-label {
+  width: 100px;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-input {
+  flex: 1;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dpi-input {
+  background-color: rgba(249, 249, 249, 1);
+}
+
+.readonly {
+  background-color: rgba(249, 249, 249, 1);
+}
+
+.readonly-input {
+  background-color: rgba(200, 200, 200, 0.5); 
+  cursor: not-allowed;
+  color: #555;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.save-button {
+  width: 80%;
+  height: 50px;
+  background-color: #1AAD19;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #179d16;
+}
+
+/* 背景元素样式，保持与首页一致 */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  mix-blend-mode: normal;
+}
+
+.vec-rectangle-HIv-1 {
+  position: absolute;
+  z-index: 0;
+  left: 0%;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  background: rgba(250, 250, 254, 1);
+  right: 0%;
+  bottom: 0%;
+}
+
+.vec-rectangle-WsH-2 {
+  position: absolute;
+  z-index: 1;
+  left: 0%;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-image: radial-gradient(ellipse 68.48% 68.48% at 17% 6%, rgba(255, 97, 40, 0.12) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 101%);
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+  right: 0%;
+  bottom: 10.344827586206897%;
+}
+
+.vec-rectangle-ztj-3 {
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-image: radial-gradient(ellipse 73.05% 65.49% at 17% 94%, rgba(226, 239, 255, 1) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 101%);
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  transform: rotate(180deg);
+  opacity: 0.9;
+  right: 0px;
+  bottom: 0%;
+}

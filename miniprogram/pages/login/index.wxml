@@ -1,0 +1,22 @@
+<view class="cont">
+  <view class="cont-img">
+    <view class="background">
+  <view class="vec-rectangle-HIv-1"></view>
+  <view class="vec-rectangle-WsH-2"></view>
+  <view class="vec-rectangle-ztj-3"></view>
+</view>
+  </view>
+
+  <view class="cont-button">
+    <view class="logo-block">
+      <view class="logo">
+        <view>AI证件照</view>
+      <view>一秒出图，快如闪电</view>
+      </view>
+
+    </view>
+    <view class="but-wh">
+      <button bindtap="noempower" class="button">快捷登录</button>
+    </view>
+  </view>
+</view>

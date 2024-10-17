@@ -1,0 +1,140 @@
+<view class="background">
+  <view class="vec-rectangle-HIv-1"></view>
+  <view class="vec-rectangle-WsH-2"></view>
+  <view class="vec-rectangle-ztj-3"></view>
+</view>
+<view class="container">
+  <view wx:if="{{!authorized}}" class="info" bindtap="goLogin">
+    <view class="image"><image src="{{avatarUrl}}" class="photo" mode=""/></view>
+    <view class="userInfo">
+    <text>登录/注册</text>
+    </view>
+  </view>
+  <view wx:else class="info" bindtap="openEditProfileModal">
+    <view class="image"><image src="{{avatarUrl}}" class="photo" mode=""/></view>
+    <view class="userInfo">
+    <text>{{nickname}}</text>
+    <view class="data-view">
+      <view>
+        <text>证件照伴侣已经陪伴你走过 {{days}} 天</text>
+      </view>
+    </view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="card-content">
+      <view class="tools">
+
+        <view class="tool" bindtap="mywork">
+          <i class="iconfont icon-huiyuan"></i>
+          <text>我的作品</text>
+        </view>
+
+        <view class="tool" bindtap="goCustomlist">
+          <i class="iconfont icon-shoucang"></i>
+          <text>我的定制</text>
+        </view>
+
+        <view class="tool" bindtap="navigateToEdit">
+          <i class="iconfont icon-youhuiquan"></i>
+          <text>我的权益</text>
+        </view>
+
+        <view class="tool" bindtap="navigateToFree">
+          <i class="iconfont icon-fuzhi"></i>
+          <text>常见问题</text>
+        </view>
+
+        <!-- open-type="xxxx"只能在button触发 -->
+        <!-- 暂时无法解决view换成button，怎么弄样式都有问题，所以暂时隐藏 -->
+
+        <!-- <view class="tool" open-type="contact">
+          <i class="iconfont icon-huiyuan"></i>
+          <text>客服中心</text>
+        </view>
+
+        <view class="tool" bindtap="evaluate">
+          <i class="iconfont icon-huiyuan"></i>
+          <text>赏好评</text>
+        </view>
+
+        <view class="tool" open-type="share">
+          <i class="iconfont icon-huiyuan"></i>
+          <text>分享</text>
+        </view> -->
+
+        <view class="tool" bindtap="easterEgg">
+          <i class="iconfont icon-fuzhi"></i>
+          <text>待开发</text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+    <!-- 我的权益弹框 -->
+    <view class="modal" wx:if="{{modalType === 'rights'}}">
+    <view class="modal-content">
+      <view class="modal-body">
+        <view class="modal-title">我的权益</view>
+        <view class="modal-list">
+          <text>● 你目前已经解锁基础功能，并无限制使用;</text>
+          <text>● 你目前享受一对一专属客服，7x24全年极速响应;</text>
+          <text>● 待解锁：排版照，人像抠图，黑白上色，粘土风写真;</text>
+          <text>● 请多多分享小程序，系统将自动为您解锁。</text>
+        </view>
+        <button bindtap="closeModal">我明白了</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 常见问题弹框 -->
+  <view class="modal" wx:if="{{modalType === 'questions'}}">
+    <view class="modal-content">
+      <view class="modal-body">
+        <view class="modal-title">常见问题</view>
+        <view class="modal-list">
+          <text>● 制作证件照收费吗？ 答：完全免费;</text>
+          <text>● 我的隐私是否安全？ 答：我们不保存您上传的照片，只记录您主动触发下载时的生成图;</text>
+          <text>● 在哪里查看下载记录？ 答：我的作品;</text>
+        </view>
+        <button bindtap="closeModal">我明白了</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 编辑头像和昵称的 -->
+  <view class="modal" wx:if="{{modalType === 'editProfile'}}">
+    <view class="modal-content">
+      <view class="modal-body">
+        <view class="modal-title">编辑个人资料</view>
+        <view class="edit-profile-form">
+          <!-- 头像选择 -->
+          <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+            <image class="avatar" src="{{avatarFile}}" mode="aspectFill"></image>
+            <view class="overlay">
+              <van-icon name="camera-o" size="24px" color="#fff" />
+              <text class="overlay-text">更换头像</text>
+            </view>
+          </button>
+          <!-- 昵称输入 -->
+          <input type="nickname" class="nickname-input" placeholder="请输入昵称(非必填)" value="{{nicknameFile}}" bindinput="onNicknameInput"/>
+        </view>
+        <button class="save-button" bindtap="updateUserInfo">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 彩蛋 -->
+  <view class="modal" wx:if="{{modalType === 'easterEgg'}}">
+    <view class="modal-content easter-egg-content">
+      <view class="modal-body">
+        <view class="modal-title">❤️ 恭喜您触发彩蛋 ❤️</view>
+        <view class="modal-message">
+          我给你的，就是我想要的，我爱你的方式，就是我希望被爱的方式
+        </view>
+        <button bindtap="closeModal">一定会被爱的</button>
+      </view>
+    </view>
+  </view>
+</view>

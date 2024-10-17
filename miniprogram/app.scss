@@ -1,0 +1,69 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding:0 22px;
+} 
+
+page{
+  font-family: "PingFangSC-Regular, sans-serif";
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100vh;
+  mix-blend-mode: normal;
+}
+
+.vec-rectangle-HIv-1 {
+  position: absolute;
+  z-index: 0;
+  left: 0%;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  background: rgba(250, 250, 254, 1);
+  right: 0%;
+  bottom: 0%;
+}
+
+.vec-rectangle-WsH-2 {
+  position: absolute;
+  z-index: 1;
+  left: 0%;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-image: radial-gradient(ellipse 68.47998853053801% 68.47998853053801% at 17% 6%, rgba(255, 97, 40, 0.12) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 101%);
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+  right: 0%;
+  bottom: 10.344827586206897%;
+}
+
+.vec-rectangle-ztj-3 {
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-image: radial-gradient(ellipse 73.05102777957015% 65.49402490582152% at 17% 94%, rgba(226, 239, 255, 1) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 101%);
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  rotate: 7.0167096047110005e-15deg;
+  transform: rotate(180deg);
+  opacity: 0.9;
+  right: 0px;
+  bottom: 0%;
+}
+
+@import "./assets/fonts/iconfont.scss"

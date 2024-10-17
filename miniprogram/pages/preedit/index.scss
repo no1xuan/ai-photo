@@ -1,0 +1,197 @@
+.photoPage-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 22px;
+  font-family: "PingFangSC-Regular, sans-serif";
+  position: relative;
+  overflow: hidden;
+  margin-top: 12rem;
+}
+
+.photoPage-background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100vh;
+  mix-blend-mode: normal;
+}
+
+.photoPage-vec-rectangle-HIv-1 {
+  position: absolute;
+  z-index: 0;
+  left: 0%;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  background: rgba(250, 250, 254, 1);
+  right: 0%;
+  bottom: 0%;
+}
+
+.photoPage-vec-rectangle-WsH-2 {
+  position: absolute;
+  z-index: 1;
+  left: 0%;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-image: radial-gradient(ellipse 68.48% 68.48% at 17% 6%, rgba(255, 97, 40, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+  right: 0%;
+  bottom: 10.34%;
+}
+
+.photoPage-vec-rectangle-ztj-3 {
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0%;
+  width: auto;
+  height: auto;
+  background-image: radial-gradient(ellipse 73.05% 65.49% at 17% 94%, rgba(226, 239, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+  transform: rotate(180deg);
+  opacity: 0.9;
+  right: 0px;
+  bottom: 0%;
+}
+
+/* 标题样式 */
+.photoPage-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.photoPage-title image {
+  width: 200rpx; /* 增大图片宽度 */
+  height: auto;
+}
+
+/* 规格信息样式 */
+.photoPage-weui-cells {
+  width: 100%;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+.photoPage-weui-cells_after-title {
+  margin-bottom: 20rpx;
+}
+
+.weui-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 0;
+}
+
+.weui-cell:last-child {
+  border-bottom: none;
+}
+
+.weui-cell__bd {
+  font-size: 26rpx;
+  color: #555;
+}
+
+.weui-cell__ft {
+  font-size: 26rpx;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.photoPage-color-picker {
+  display: flex;
+  gap: 10rpx;
+}
+
+.photoPage-color-circle {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.photoPage-color-circle.white {
+  background-color: #FFFFFF;
+}
+
+.photoPage-color-circle.blue {
+  background-color: #438edb;
+}
+
+.photoPage-color-circle.light-blue {
+  background-color: #00bff3;
+}
+
+.photoPage-color-circle.red {
+  background-color: #ff0000;
+}
+
+.photoPage-color-circle.rainbow {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+}
+
+/* 操作按钮部分 */
+.photoPage-btn-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.photoPage-btn {
+  width: 45%; 
+  padding: 15rpx 0;
+  border-radius: 24rpx;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  background: #438edb;
+}
+
+.photoPage-btn.choose-image {
+  background: #ff5722;
+}
+
+.photoPage-btn.take-photo {
+  background: #00bff3;
+}
+
+.photoPage-btn:first-child {
+  margin-right: 10%;
+}
+
+/* 响应式调整 */
+@media screen and (min-width: 750rpx) {
+  .photoPage-title image {
+    width: 200rpx;
+  }
+
+  .weui-cell__bd, .weui-cell__ft {
+    font-size: 28rpx;
+  }
+
+  .photoPage-color-circle {
+    width: 40rpx;
+    height: 40rpx;
+  }
+
+  .photoPage-btn {
+    font-size: 28rpx;
+  }
+}
