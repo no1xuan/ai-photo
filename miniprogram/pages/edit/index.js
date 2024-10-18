@@ -68,21 +68,27 @@ Page({
       color: e.currentTarget.dataset.color,
       colorType: 1,
     })
-    this.updateColor(this.data.color, this.data.imageData.kimg);
+    this.updateColor(this.data.color, this.data.imageData.kimg,1);
   },
   
 
     // 调用换背景
-    updateColor(color, tu) {
+    updateColor(color, tu, type) {
+      let requestData = {
+        "image": tu,
+        "colors": color,
+        "kb": this.data.kb,
+        "render": this.data.render
+      };
+      
+      if (type == 1) {
+        requestData.dpi = this.data.dpi;
+      }else{
+        requestData.dpi = 0;   //高清下载时不能自定义dpi
+      }
       wx.request({
         url: app.url + 'api/updateIdPhoto',
-        data: {
-          "image": tu,
-          "colors": color,
-          "kb": this.data.kb,
-          "dpi": this.data.dpi,
-          "render": this.data.render
-        },
+        data: requestData,
         header: {
           "token": wx.getStorageSync("token")
         },
@@ -198,9 +204,20 @@ Page({
       success: (res) => {
         wx.hideLoading();
         if (res.data.code == 200) {
-          this.updateColor(this.data.color, res.data.data.kimg);
-          wx.nextTick(() => {
-            this.saveNormalPhoto();
+          this.updateColor(this.data.color, res.data.data.kimg,2);
+          wx.showModal({
+            title: '确认下载',
+            content: '高清照已制作完成，是否立即下载？',
+            success: (res) => {
+              if (res.confirm) {
+                this.saveNormalPhoto();
+              } else if (res.cancel) {
+                wx.showToast({
+                  title: '已取消下载',
+                  icon: 'none'
+                });
+              }
+            }
           });
         } else if (res.data.code == 404) {
           wx.showToast({
