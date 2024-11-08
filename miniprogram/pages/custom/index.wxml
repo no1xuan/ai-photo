@@ -57,6 +57,7 @@
         type="number" 
         placeholder="分辨率：dpi" 
         maxlength="4" 
+        bindinput="changeDpi" 
         class="form-input dpi-input"
         value="{{dpi}}"
       />

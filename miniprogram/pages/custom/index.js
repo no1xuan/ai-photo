@@ -40,6 +40,13 @@ Page({
     this.updateSize();
   }, 300),
 
+  changeDpi(e) {
+    const value = e.detail.value || '';
+    this.setData({
+      dpi: value
+    });
+  },
+
   // 更新尺寸和像素显示
   updateSize() {
     let width = parseInt(this.data.width, 10);
@@ -60,6 +67,7 @@ Page({
     const width = parseInt(this.data.width, 10);
     const height = parseInt(this.data.height, 10);
     const dpi = parseInt(this.data.dpi, 10);
+    console.log(dpi)
     
     // 输入验证
     if (!name) {
