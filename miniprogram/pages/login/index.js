@@ -1,6 +1,8 @@
 const app = getApp()
 Page({
-  data: {},
+  data: {
+    title:app.appName
+  },
   
 
 

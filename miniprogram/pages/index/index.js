@@ -34,6 +34,7 @@ Page({
       url: '/pages/search/index',
     });
   },
+
   //定制页面
   goCustom:function(){
     if (!wx.getStorageSync('token')) {
@@ -47,11 +48,19 @@ Page({
     }
 
   },
+  
 //定制列表
 goCustomlist:function(){
-  wx.navigateTo({
-    url: '/pages/customlist/index',
-  });
+  if (!wx.getStorageSync('token')) {
+    wx.navigateTo({
+      url: '/pages/login/index'
+    });
+  }else{
+    wx.navigateTo({
+      url: '/pages/customlist/index',
+    });
+  }
+
 },
 
   // 获取规格
@@ -65,9 +74,9 @@ goCustomlist:function(){
         type: 1
       },
       success: (res) => {
-        if (res.data.code === 200) {
+        if (res.data.code == 200) {
           this.setData({
-            specArr: res.data.data
+            specArr: res.data.data.records
           });
         }  else {
           wx.showToast({

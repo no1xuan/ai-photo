@@ -32,22 +32,29 @@ Page({
         token: wx.getStorageSync('token')
       },
       data: {
-        pageNum: this.data.pageNum,
+        pageNum: this.data.pageNum, 
         pageSize: this.data.pageSize,
-        type: 4,
+        type: 4, // 固定为4
       },
       success: (res) => {
-        if (res.data.code === 200) {
-          const newData = res.data.data || [];
+        if (res.data.code == 200) {
+          const newData = res.data.data.records || [];
+          const totalPages = res.data.data.pages || 1; // 总页数
+
           this.setData({
-            customList: this.data.pageNum === 1 ? newData : this.data.customList.concat(newData),
+            customList: this.data.pageNum == 1 ? newData : this.data.customList.concat(newData),
             pageNum: this.data.pageNum + 1,
-            hasMoreData: newData.length >= this.data.pageSize,
+            hasMoreData: this.data.pageNum < totalPages,
           });
         } else {
-          if (this.data.pageNum === 1) {
+          if (this.data.pageNum == 1) {
             this.setData({ customList: [], hasMoreData: false });
           }
+          wx.showToast({
+            title: res.data.msg || '获取数据失败',
+            icon: 'none',
+            duration: 2000
+          });
         }
       },
       fail: () => {
@@ -76,5 +83,4 @@ Page({
       url: `/pages/preedit/index?data=${dataString}`,
     });
   },
-
 });

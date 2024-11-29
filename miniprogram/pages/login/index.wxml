@@ -10,7 +10,7 @@
   <view class="cont-button">
     <view class="logo-block">
       <view class="logo">
-        <view>AI证件照</view>
+        <view>{{title}}</view>
       <view>一秒出图，快如闪电</view>
       </view>
 

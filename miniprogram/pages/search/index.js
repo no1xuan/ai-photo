@@ -1,4 +1,3 @@
-// pages/search/index.js
 const app = getApp();
 
 Page({
@@ -12,8 +11,7 @@ Page({
     noResults: false,
   },
 
-  onLoad: function (options) {
-  },
+  onLoad: function () {},
 
   // 处理输入变化
   onInput: function (e) {
@@ -35,11 +33,10 @@ Page({
     }
   },
 
-
+  // 搜索数据
   searchData: function () {
     if (!this.data.hasMoreData || this.data.isLoading) return;
 
-    // 判断是初始搜索还是加载更多
     const isInitialSearch = this.data.pageNum === 1;
 
     wx.showLoading({ title: isInitialSearch ? '搜索中...' : '加载中...' });
@@ -50,21 +47,22 @@ Page({
       data: {
         pageNum: this.data.pageNum,
         pageSize: this.data.pageSize,
-        type: 0,
+        type: 0, // 固定为 0
         name: this.data.value,
       },
       method: "GET",
       success: (res) => {
-        if (res.data.code === 200) {
-          const newData = res.data.data || [];
+        if (res.data.code == 200) {
+          const newData = res.data.data.records || [];
+          const totalPages = res.data.data.pages; // 总页数
           this.setData({
-            photoSizeList: this.data.pageNum === 1 ? newData : this.data.photoSizeList.concat(newData),
+            photoSizeList: this.data.pageNum == 1 ? newData : this.data.photoSizeList.concat(newData),
             pageNum: this.data.pageNum + 1,
-            hasMoreData: newData.length >= this.data.pageSize,
-            noResults: this.data.pageNum === 1 && newData.length === 0
+            hasMoreData: this.data.pageNum <= totalPages,
+            noResults: this.data.pageNum == 1 && newData.length == 0
           });
         } else {
-          if (this.data.pageNum === 1){
+          if (this.data.pageNum == 1){
             this.setData({ noResults: true });
           }
           wx.showToast({
@@ -119,7 +117,7 @@ Page({
       hasMoreData: true,
       noResults: false,
     });
-    if (this.data.value !== '') {
+    if (this.data.value != '') {
       this.searchData();
     }
     wx.stopPullDownRefresh();
