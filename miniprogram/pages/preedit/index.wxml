@@ -56,7 +56,7 @@
         <view class="weui-cell__ft">头部居中，露出双耳和眉毛，面部无遮挡</view>
       </view>
 
-      <view class="weui-cell">
+      <view class="weui-cell" wx:if="{{openIsBeautyOn==1}}">
         <view class="weui-cell__bd">美颜</view>
         <view class="weui-cell__ft">
           <switch checked="{{isBeautyOn}}" bindchange="onBeautySwitch" color="#3e7dff"/>
