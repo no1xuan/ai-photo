@@ -40,9 +40,6 @@ Page({
   getvideoUnit() {
     wx.request({
       url: app.url + 'api/getvideoUnit',
-      header: {
-        "token": wx.getStorageSync("token")
-      },
       method: "POST",
       success: (res) => {
         this.setData({
