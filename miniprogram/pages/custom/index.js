@@ -8,7 +8,9 @@ Page({
     dpi: '300',
     name: '',
     px: '0*0 px',
-    size: '0*0 mm'
+    size: '0*0 mm',
+    widthMm:'',
+    heightMm:''
   },
 
   onLoad: function () {
@@ -57,7 +59,9 @@ Page({
     let height_mm = Math.floor(height_px / 11.8);
     this.setData({
       px: `${width_px}*${height_px} px`,
-      size: `${width_mm}*${height_mm} mm`
+      size: `${width_mm}*${height_mm} mm`,
+      widthMm: width_mm,
+      heightMm: height_mm
     });
   },
 
@@ -121,7 +125,7 @@ Page({
     }
 
     // 发起保存请求
-    wx.showLoading({ title: '保存中...' });
+    wx.showLoading({ title: '定制中...' });
     wx.request({
       url: app.url + 'item/saveCustom',
       method: 'POST',
@@ -129,7 +133,8 @@ Page({
         name: name,
         widthPx: width,
         heightPx: height,
-        size: this.data.size,
+        widthMm: this.data.widthMm,
+        heightMm: this.data.heightMm,
         dpi: dpi
       },
       header: {
@@ -138,11 +143,6 @@ Page({
       success: (res) => {
         wx.hideLoading();
         if (res.data.code === 200) {
-          wx.showToast({
-            title: '定制成功',
-            duration: 2000,
-            mask: true
-          });
           // 重置表单
           this.setData({
             name: '',
@@ -150,9 +150,27 @@ Page({
             height: '',
             dpi: '300',
             px: '0*0 px',
-            size: '0*0 mm'
+            size: '0*0 mm',
+            widthMm: '',
+            heightMm: ''
           });
-        } else if(res.data.code === 404){
+          wx.showModal({
+            title: '定制成功',
+            content: '尺寸定制成功，是否立即去制作？',
+            success: (res2) => {
+              if (res2.confirm) {
+                wx.navigateTo({
+                  url: '/pages/preedit/index?category=4&data='+JSON.stringify(res.data.data),
+                });
+              } else if (res2.cancel) {
+                wx.showToast({
+                  title: '后续可在快速制作里面的我的定制进行查看',
+                  icon: 'none'
+                });
+              }
+            }
+          });
+        } else if(res.data.code == 404){
           wx.showToast({
             title: res.data.data,
             duration: 2000,

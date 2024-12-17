@@ -16,6 +16,9 @@
 		</view>
 	</view>
 	<view wx:else>
+    <view class="iconfont icon_back" bindtap="goPreEdit">
+			<image src="./images/back.png" style="width:100%; height:100%"></image>
+		</view>
 		<view class="iconfont icon_cameraC" bindtap="photo">
 			<image src="./images/camera.png" style="width:100%; height:100%"></image>
 		</view>

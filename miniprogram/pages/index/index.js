@@ -13,11 +13,8 @@ Page({
 
   examineTo() {
     wx.navigateTo({
-      url: '/pages/preedit/index?category=1&data={"id":759,"name":"中考报名","widthPx":240,"heightPx":320,"widthMm":20,"heightMm":27,"icon":1,"sort":100,"category":1,"dpi":300}',
+      url: '/pages/preedit/index?category=1&data={"id":1,"name":"一寸","widthPx":295,"heightPx":413,"widthMm":25,"heightMm":35,"icon":5,"sort":1,"category":1,"dpi":300}',
     });
-    // wx.navigateTo({
-    //   url: '/pages/edit/index',
-    // });
   },
 
   // 导航栏点击事件

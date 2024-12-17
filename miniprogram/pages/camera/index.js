@@ -73,7 +73,17 @@ Page({
       cameraImg: false,
       photoSrc: ''
     })
+  },
 
+  //返回前一页
+  goPreEdit() {
+    this.setData({
+      cameraImg: false,
+      photoSrc: ''
+    })
+    wx.navigateBack({
+      delta: 1
+    })
   },
 
   // 上传原图
@@ -101,11 +111,11 @@ Page({
       title: '图片检测中',
     })
     wx.uploadFile({
-      url: app.url+'upload',
-      filePath: filePath, 
-      name: 'file', 
+      url: app.url + 'upload',
+      filePath: filePath,
+      name: 'file',
       header: {
-        'content-type': 'multipart/form-data', 
+        'content-type': 'multipart/form-data',
         "token": wx.getStorageSync("token")
       },
       success: (res) => {
@@ -125,35 +135,35 @@ Page({
         }
       }
     })
-   
+
   },
 
   imageDivision(tu) {
     wx.showLoading({
       title: '制作中...',
     });
-  
+
     let type = this.data.detail.category == 4 ? 0 : 1;
     wx.request({
       url: app.url + 'api/createIdPhoto',
       data: {
         "image": tu,
         "type": type,
-        "itemId": this.data.detail.id
+        "itemId": this.data.detail.id,
+        "isBeautyOn": this.data.detail.isBeautyOn
       },
       header: {
         "token": wx.getStorageSync("token")
       },
       method: "POST",
-      success: (res) => { 
+      success: (res) => {
         wx.hideLoading();
         if (res.data.code == 200) {
           this.goEditPage(res.data.data);
         } else if (res.data.code == 404) {
-          console.log(res.data);
           wx.showToast({
             title: res.data.data,
-            icon: 'error'
+            icon: 'none'
           });
         } else {
           wx.navigateTo({
@@ -162,7 +172,7 @@ Page({
         }
       }
     });
-  },  
+  },
 
 
 
@@ -177,7 +187,8 @@ Page({
       id,
       name,
       widthMm,
-      widthPx
+      widthPx,
+      isBeautyOn
     } = this.data.detail
     wx.navigateTo({
       url: '/pages/edit/index',
@@ -190,60 +201,12 @@ Page({
           id,
           name,
           widthMm,
-          widthPx
+          widthPx,
+          isBeautyOn
         })
       }
     })
-  },
-
-
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
+
+
 })
