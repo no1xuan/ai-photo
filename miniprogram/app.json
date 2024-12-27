@@ -9,7 +9,8 @@
     "pages/search/index",
     "pages/custom/index",
     "pages/customlist/index",
-    "pages/camera/index"
+    "pages/camera/index",
+    "pages/admin/index"
   ],
   "tabBar": {
     "color": "#000",
