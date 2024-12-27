@@ -16,7 +16,7 @@
     <text>{{nickname}}</text>
     <view class="data-view">
       <view>
-        <text>证件照伴侣已经陪伴你走过 {{days}} 天</text>
+        <text>{{title}}已经陪伴你走过 {{days}} 天</text>
       </view>
     </view>
     </view>
@@ -63,7 +63,7 @@
           <text>分享</text>
         </view> -->
 
-        <view class="tool" bindtap="easterEgg">
+        <view class="tool">
           <i class="iconfont icon-fuzhi"></i>
           <text>待开发</text>
         </view>
@@ -125,16 +125,5 @@
     </view>
   </view>
 
-  <!-- 彩蛋 -->
-  <view class="modal" wx:if="{{modalType === 'easterEgg'}}">
-    <view class="modal-content easter-egg-content">
-      <view class="modal-body">
-        <view class="modal-title">❤️ 恭喜您触发彩蛋 ❤️</view>
-        <view class="modal-message">
-          我给你的，就是我想要的，我爱你的方式，就是我希望被爱的方式
-        </view>
-        <button bindtap="closeModal">一定会被爱的</button>
-      </view>
-    </view>
-  </view>
+
 </view>
