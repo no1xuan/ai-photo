@@ -53,11 +53,6 @@
           <text>客服中心</text>
         </view>
 
-        <view class="tool" bindtap="evaluate">
-          <i class="iconfont icon-huiyuan"></i>
-          <text>赏好评</text>
-        </view>
-
         <view class="tool" open-type="share">
           <i class="iconfont icon-huiyuan"></i>
           <text>分享</text>
@@ -78,9 +73,8 @@
       <view class="modal-body">
         <view class="modal-title">我的权益</view>
         <view class="modal-list">
-          <text>● 你目前已经解锁基础功能，并无限制使用;</text>
+          <text>● 你目前已经解锁全部功能，并无限制使用;</text>
           <text>● 你目前享受一对一专属客服，7x24全年极速响应;</text>
-          <text>● 待解锁：排版照，人像抠图，黑白上色，粘土风写真;</text>
           <text>● 请多多分享小程序，系统将自动为您解锁。</text>
         </view>
         <button bindtap="closeModal">我明白了</button>

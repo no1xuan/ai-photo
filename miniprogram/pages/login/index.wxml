@@ -1,22 +1,24 @@
 <view class="cont">
   <view class="cont-img">
     <view class="background">
-  <view class="vec-rectangle-HIv-1"></view>
-  <view class="vec-rectangle-WsH-2"></view>
-  <view class="vec-rectangle-ztj-3"></view>
-</view>
+      <view class="vec-rectangle-HIv-1"></view>
+      <view class="vec-rectangle-WsH-2"></view>
+      <view class="vec-rectangle-ztj-3"></view>
+    </view>
   </view>
 
   <view class="cont-button">
     <view class="logo-block">
       <view class="logo">
         <view>{{title}}</view>
-      <view>一秒出图，快如闪电</view>
+        <view>一秒出图，快如闪电</view>
       </view>
-
     </view>
     <view class="but-wh">
-      <button bindtap="noempower" class="button">快捷登录</button>
+      <button bindtap="noempower" class="button">登录</button>
+    </view>
+    <view class="but-wh">
+      <button bindtap="cancelLogin" class="button cancel-button">取消登录</button>
     </view>
   </view>
 </view>

@@ -62,12 +62,18 @@
 .button {
   width: 70vw;
   height: 88rpx;
-  background: transparent;
-  color: #3e7dff;
   font-size: 30rpx;
   line-height: 54rpx;
   border-radius: 50rpx;
-  border: 2rpx solid #3e7dff;
   box-sizing: border-box;
+  border: 2rpx solid #3e7dff;
+  // 默认样式为实心（快捷登录按钮）
+  background: #3e7dff;
+  color: #fff;
 }
 
+// 取消登录按钮为不实心
+.cancel-button {
+  background: transparent;
+  color: #3e7dff;
+}

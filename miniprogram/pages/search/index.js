@@ -27,6 +27,9 @@ Page({
       this.searchData();
     } else {
       this.setData({
+        value: '',
+        pageNum: 1,
+        photoSizeList: [],
         hasMoreData: false,
         noResults: false,
       });
